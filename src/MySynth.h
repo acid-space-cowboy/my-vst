@@ -11,7 +11,8 @@ public:
     void process(juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages);
 private:
     std::array<MidiNote, 10> midiNotes;
-    void playMidiNote(juce::MidiMessage& msg, int startPos);
+    void processMidiNote(juce::MidiMessage& msg);
+    void playNotes(juce::AudioBuffer<float>& buffer, int startPos, int endPos);
     double sampleRate;
     int expectedMaxFramesPerBlock;
     float lastP;
